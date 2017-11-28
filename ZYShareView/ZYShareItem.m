@@ -12,7 +12,7 @@
 
 + (instancetype)itemWithTitle:(NSString *)title
                          icon:(NSString *)icon
-                     handler:(void (^)())handler
+                      handler:(void (^)(void))handler
 {
     ZYShareItem *item = [[ZYShareItem alloc] init];
     item.title = title;

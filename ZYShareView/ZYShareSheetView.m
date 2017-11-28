@@ -42,16 +42,23 @@
 {
     [super layoutSubviews];
     
+    for (id view in self.subviews) {
+        if ([view isKindOfClass:(NSClassFromString(@"_UIToolbarContentView"))]) {
+            UIView *theView = view;
+            theView.userInteractionEnabled = NO;
+        }
+    }
+    
     CGRect frame = self.frame;
     frame.size.height = [self shareSheetHeight];
     self.frame = frame;
-    
+
     // 标题
     self.titleLabel.frame = CGRectMake(ZY_TitlePadding, 0, ZY_ScreenWidth - 2 * ZY_TitlePadding, self.titleHeight);
-    
+
     // 取消按钮
     self.cancelButton.frame = CGRectMake(0, self.frame.size.height - ZY_CancelButtonHeight, ZY_ScreenWidth, ZY_CancelButtonHeight);
-    
+
     // TableView
     self.tableView.frame = CGRectMake(0, self.titleHeight, ZY_ScreenWidth, self.dataArray.count * ZY_ItemCellHeight);
 }

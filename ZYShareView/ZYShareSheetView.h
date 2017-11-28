@@ -17,7 +17,7 @@
 //@property (nonatomic, strong) NSArray *functionArray;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
-@property (nonatomic, copy) void (^cancelBlock)();
+@property (nonatomic, copy) void (^cancelBlock)(void);
 
 - (CGFloat)shareSheetHeight;
 - (CGFloat)initialHeight;
